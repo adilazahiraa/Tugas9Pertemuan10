@@ -2,7 +2,9 @@
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth"; // Tambahkan ini
+import { getAuth, GoogleAuthProvider } from "firebase/auth"; // Tambahkan ini
+import { getFirestore } from 'firebase/firestore';
+
 
 // Konfigurasi Firebase
 const firebaseConfig = {
@@ -19,5 +21,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app); // Inisialisasi Auth
+const googleProvider = new GoogleAuthProvider();  
 
-export { auth }; // Ekspor auth untuk digunakan di seluruh aplikasi
+const db = getFirestore(app);
+
+
+export { auth, googleProvider, db }; // Ekspor auth untuk digunakan di seluruh aplikasi
+
