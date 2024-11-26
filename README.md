@@ -24,3 +24,20 @@ Komponen ini adalah halaman beranda sederhana menggunakan **Ionic Vue**, yang te
 
 4. Gambar Profile
 Halaman ini adalah tampilan profil pengguna dalam aplikasi Ionic yang mencakup beberapa elemen UI. Di bagian atas, terdapat header dengan judul "Profile" dan tombol logout di sudut kanan atas. Ketika tombol logout diklik, fungsi `logout` dari store otentikasi akan dipanggil untuk keluar dari sesi pengguna. Di bawah header, ada tampilan avatar pengguna yang diambil dari `userPhoto` yang diset dari foto profil pengguna. Jika terjadi kesalahan saat memuat gambar, fungsi `handleImageError` akan mengganti foto dengan gambar default. Kemudian, ada daftar input yang menampilkan data profil pengguna, seperti nama dan email, yang diambil dari objek `user`. Semua input ini bersifat readonly untuk mencegah perubahan langsung. Di bagian bawah halaman, komponen `TabsMenu` digunakan untuk menampilkan menu tab navigasi. Halaman ini memberikan tampilan yang bersih dan terstruktur untuk informasi profil pengguna.
+
+CRUD
+Aplikasi ini mengimplementasikan fitur CRUD untuk pengelolaan todo list. **Create** dilakukan dengan menekan tombol tambah (**+**) yang membuka modal input. Pengguna dapat mengisi judul dan deskripsi todo, lalu menyimpannya melalui fungsi `handleSubmit`, yang akan menambahkan data baru ke Firestore menggunakan `firestoreService.addTodo`. **Read** dilakukan dengan memuat semua todo dari Firestore melalui fungsi `loadTodos`, lalu menampilkan daftar todo aktif dan selesai yang difilter menggunakan `activeTodos` dan `completedTodos`. Untuk **Update**, pengguna dapat mengedit todo dengan menekan tombol edit (ikon **pensil**) pada todo tertentu, yang membuka modal dengan data todo tersebut. Setelah dilakukan perubahan, fungsi `handleSubmit` akan memperbarui data di Firestore menggunakan `firestoreService.updateTodo`. Terakhir, **Delete** memungkinkan pengguna menghapus todo dengan menekan tombol hapus (ikon **tempat sampah**) yang memanggil fungsi `handleDelete` untuk menghapus data dari Firestore. Todo juga dapat diubah statusnya menjadi selesai atau aktif dengan menekan tombol status (ikon **checkmark** atau **close**) melalui fungsi `handleStatus`.
+
+## Screenshot
+
+![Checklist ToDo](ChecklistToDo.png)
+![Create](Create.png)
+![Delete](Delete.png)
+![Edit](Edit.png)
+![Edit & Checklist](Edit&Checklist.png)
+![Login](Login.png)
+![Profile](Profile.png)
+![Sudah Login](SudahLogin.png)
+![Tampilan Awal](TampilanAwal.png)
+![ToDo Baru](TodoBaru.png)
+
